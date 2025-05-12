@@ -1,11 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
-  modules: ['@nuxt/eslint'],
-  eslint: {
-    config: {
-      stylistic: true
-    }
-  }
-})
+	modules: ["@nuxt/eslint"],
+	devtools: { enabled: true },
+	compatibilityDate: "2024-11-01",
+	css: ["@picocss/pico"],
+	eslint: {
+		config: {
+			stylistic: {
+				semi: true,
+				quotes: "double",
+				commaDangle: "always-multiline",
+				indent: "tab",
+			},
+		},
+	},
+});
