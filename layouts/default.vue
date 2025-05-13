@@ -11,4 +11,9 @@
 .error {
   color: red;
 }
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
 </style>
