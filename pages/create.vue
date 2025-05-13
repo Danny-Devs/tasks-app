@@ -20,7 +20,12 @@ const onSubmit = async () => {
 			},
 		});
 		taskName.value = "";
-		console.log(result);
+		navigateTo({
+			name: "tasks-id",
+			params: {
+				id: result.id,
+			},
+		});
 	}
 	catch (e) {
 		const error = e as FetchError;
