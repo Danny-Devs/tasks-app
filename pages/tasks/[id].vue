@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-
 const route = useRoute();
-const id = route.params.id;
 
 // Fetch the task from the API
-const { data: task, error, pending } = await useFetch(`/api/tasks/${id}`);
+const { data: task, error, status } = await useFetch(`/api/tasks/${route.params.id}`);
 </script>
 
 <template>
 	<div>
 		<article
-			v-if="pending"
+			v-if="status === 'pending'"
 			aria-busy
 		/>
 		<article
