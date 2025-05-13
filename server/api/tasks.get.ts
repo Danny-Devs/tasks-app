@@ -1,14 +1,6 @@
+import db from "~/lib/db"
+
 export default defineEventHandler(async () => {
-	return [
-		{
-			id: 1,
-			title: "Learn Nuxt",
-			done: false,
-		},
-		{
-			id: 2,
-			title: "Learn Vue",
-			done: false,
-		},
-	];
+	const tasks = await db.query.tasks.findMany();
+	return tasks;
 });

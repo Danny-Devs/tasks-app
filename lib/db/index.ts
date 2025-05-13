@@ -7,7 +7,7 @@ import * as schema from "./schema"; // Import all table schemas
 const db = drizzle({
 	connection: {
 		url: env.TURSO_DATABASE_URL, // Use the database URL from environment
-		authToken: env.NODE_ENV === "development" ? undefined : env.TURSO_AUTH_TOKEN, // Use auth token only outside development
+		authToken: env.TURSO_AUTH_TOKEN, // Use auth token only outside development
 	},
 	casing: "snake_case", // Use snake_case for database columns
 	schema, // Import and use the defined schema
